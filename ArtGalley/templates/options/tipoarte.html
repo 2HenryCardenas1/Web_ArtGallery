@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Art Gallery-Tipo de Arte </title>
+    <link rel="shortcut icon" href="https://images.vexels.com/media/users/3/142929/isolated/preview/878464f0cee16c2377c4872139cf6702-logotipo-de-arte-de-c-iacute-rculos-de-ojos-by-vexels.png" type="image/x-icon">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/carousel.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <script
+            src="https://kit.fontawesome.com/70781f61cc.js"
+            crossorigin="anonymous"
+    ></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+{% include 'scripts/scripts.html' %}
+
+<body>
+{% include 'header/header.html' %}
+
+<main role="main">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img
+                        src="https://image.freepik.com/foto-gratis/fondos-arte-abstracto_35048-787.jpg"
+                        alt=""
+                />
+                <svg
+                        class="bd-placeholder-img"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label=" :  "
+                        preserveAspectRatio="xMidYMid slice"
+                        focusable="false"
+                >
+                    <title></title>
+                    <rect width="100%" height="100%" fill="#777"/>
+                    <text x="50%" y="50%" fill="#777" dy=".3em"></text>
+                </svg>
+
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>Art Galley.</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisi est, pharetra ut
+                            gravida in, efficitur eget leo. Duis laoreet hendrerit libero, sed condimentum est tempus
+                            vitae
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                        src="https://www.xtrafondos.com/wallpapers/ballena-fantasia-arte-digital-5335.jpg"
+                        alt=""
+                />
+                <svg
+                        class="bd-placeholder-img"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label=" :  "
+                        preserveAspectRatio="xMidYMid slice"
+                        focusable="false"
+                >
+                    <title></title>
+                    <rect width="100%" height="100%" fill="#777"/>
+                    <text x="50%" y="50%" fill="#777" dy=".3em"></text>
+                </svg>
+
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>El arte de diseñar.</h1>
+                        <p>
+                            Fusce at nibh non purus consequat ullamcorper eu vitae ipsum. Sed sagittis dignissim
+                            scelerisque. Aenean ultricies vulputate massa, non malesuada eros tempor at.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                        src="https://i.blogs.es/a7feb6/1378287397891/1366_2000.png"
+                        alt=""
+                />
+                <svg
+                        class="bd-placeholder-img"
+                        width="100%"
+                        height="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label=" :  "
+                        preserveAspectRatio="xMidYMid slice"
+                        focusable="false"
+                >
+                    <title></title>
+                    <rect width="100%" height="100%" fill="#777"/>
+                    <text x="50%" y="50%" fill="#777" dy=".3em"></text>
+                </svg>
+
+                <div class="container">
+                    <div class="carousel-caption text-right">
+                        <h1>Paisajes creados.</h1>
+                        <p>
+                            Donec pretium, tortor ut finibus viverra, augue urna lacinia elit, et elementum nunc dolor
+                            nec massa. Suspendisse cursus iaculis orci non ultrices. Sed eget sapien id justo rhoncus
+                            ullamcorper nec ut velit.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a
+                class="carousel-control-prev"
+                href="#myCarousel"
+                role="button"
+                data-slide="prev"
+        >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a
+                class="carousel-control-next"
+                href="#myCarousel"
+                role="button"
+                data-slide="next"
+        >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container marketing">
+        <!-- START THE FEATURETTES -->
+
+        <h1 style="font-size: 4rem; text-align: center;">Tipo de Arte {{ categorias.nombre }}</h1>
+        <p class="text-center">
+
+            {{ categorias.descripcion }}
+        </p>
+        <hr/>
+        {% for all in piezas %}
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">
+                        {{ categorias.nombre_pieza }}
+                        <span class="text-muted">{{ all.artista.nombre }}.</span>
+                    </h2>
+                    <p class="lead">
+                        {{ all.big_descripcion }}
+                    </p>
+                    <a class="btn btn-lg btn-primary" href="{% url 'detail' all.id %}">Detalle</a>
+                    <a class="btn btn-lg btn-danger" href="{% url 'delete' all.id %}">Eliminar</a>
+                    <a class="btn btn-lg btn-success" href="{% url 'update' all.id %}">Actualizar</a>
+                </div>
+                <div class="col-md-5">
+                    <img class="imagenCuadro" src="{{ all.imagen }}">
+
+                </div>
+            </div>
+            <hr class="featurette-divider"/>
+        {% endfor %}
+        <!-- /END THE FEATURETTES -->
+    </div>
+    <!-- /.container -->
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="float-right"><a href="#">Volver arriba</a></p>
+        <p>
+            &copy; 2021 Henry Esteban Cardenas Aleman, &middot;
+            <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+        </p>
+    </footer>
+</main>
+</body>
+</html>

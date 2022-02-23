@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Art Gallery-Agregar</title>
+    <link rel="shortcut icon" href="https://images.vexels.com/media/users/3/142929/isolated/preview/878464f0cee16c2377c4872139cf6702-logotipo-de-arte-de-c-iacute-rculos-de-ojos-by-vexels.png" type="image/x-icon">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/form-validation.css' %}"/>
+
+    <script
+            src="https://kit.fontawesome.com/70781f61cc.js"
+            crossorigin="anonymous"
+    ></script>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+{% include 'scripts/scripts.html' %}
+
+<body class="bg-light">
+{% include 'header/header.html' %}
+<!--Fin del header-->
+
+<div class="container mt-5">
+    <div class="py-5 text-center">
+        <img
+                class="d-block mx-auto mb-4"
+                src="https://images.vexels.com/media/users/3/142929/isolated/preview/878464f0cee16c2377c4872139cf6702-logotipo-de-arte-de-c-iacute-rculos-de-ojos-by-vexels.png"
+                alt=""
+                width="72"
+                height="72"
+        />
+        <h2>Formulario de creacion</h2>
+        <p class="lead">Agrega las nuevas piezas de arte y subelas a la web</p>
+    </div>
+
+    <div class="jumbotron" style="display: block">
+        <div class="container">
+            <h4 class="mb-3">Llena el formulario</h4>
+            <form class="needs-validation" method="POST" enctype="multipart/form-data" action="{% url 'add' %}"
+                  novalidate>
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">Nombre de la pieza:</label>
+                        {{ form.nombre_pieza }}
+                        <div class="invalid-feedback">Nombre de la pieza requerido</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1"
+                    >Pequeña descripcion:</label
+                    >
+                    {{ form.small_descripcion }}
+                    <div class="invalid-feedback">
+                        Descripcion requerida,minimo 389
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1"
+                    >Descripcion completa:</label
+                    >
+                    {{ form.big_descripcion }}
+                    <div class="invalid-feedback">
+                        Descripcion requerida, minimo 300 caracteres y maximo 546
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address">Precio:</label>
+                    {{ form.precio }}
+                    <div class="invalid-feedback">Ingrese el valor de la pieza.</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="country">Artista:</label>
+                        {{ form.artista }}
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="country">Categoria:</label>
+                        {{ form.categoria }}
+                        <div class="invalid-feedback">
+                            Ingrese la categoria de la pieza.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">Direccion url de la imagen princiapl:</label>
+                        {{ form.imagen }}
+                        <div class="invalid-feedback">Imagen de la pieza requerido</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">Direccion url de la imagen 2:</label>
+                        {{ form.imagen2 }}
+                        <div class="invalid-feedback">Imagen de la pieza requerido</div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">Subir imagen 3:</label>
+                        {{ form.imagen4 }}
+                        <div class="invalid-feedback">Imagen de la pieza requerido</div>
+                    </div>
+                </div>
+
+
+                <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">
+                    Agregar pieza
+                </button>
+                <a href="javascript:history.go(-1)" class="btn btn-danger btn-lg btn-block mt-3">Cancelar</a>
+            </form>
+
+
+        </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2021 Henry Esteban Cardenas Aleman</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+</div>
+<script src="../../static/JavaScript/form-validation.js"></script>
+</body>
+</html>
